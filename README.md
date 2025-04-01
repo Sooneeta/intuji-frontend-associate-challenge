@@ -1,1 +1,0 @@
-# intuji-frontend-associate-challenge
