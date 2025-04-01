@@ -1,10 +1,6 @@
-import "../styles/dashboard.scss"
+import "../styles/dashboard.scss";
 const TopBar = ({ children }) => {
-    return (
-        <div className="topbar">
-            {children}
-        </div>
-    )
-}
+  return <div className="topbar">{children}</div>;
+};
 
 export default TopBar;

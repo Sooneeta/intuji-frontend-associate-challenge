@@ -1,30 +1,120 @@
+@import "./card.scss";
+
 @mixin topbar($width) {
-    height: 64px;
-    border-radius: 100px;
+    height: 6.25vh;
+    border-radius: 6.25em;
     width: $width;
     background-color: #FFFFFF;
     box-sizing: border-box;
 }
 
+
+
 .dashboard-wrapper {
 
-
-
-    .topbar-wrapper {
-        display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+    column-gap: 2em;
+    row-gap: 2em;
+    padding: 2em;
+   
 
         .search-topbar {
             .topbar {
-                @include topbar(722px);
-                padding: 13px 20px;
+                @include topbar(50.139vw);
+                padding: 1.25em 1em;
+                display: flex;
+                align-items: center;
+                gap: 0.8em;
+
+                span {
+                   color:#667085;
+                   font-size: 1em;
+                   font-weight: 400;
+
+                }
             }
         }
 
         .user-topbar {
             .topbar {
-                @include topbar(350px);
-                padding: 8px;
+                @include topbar(24.306vw);
+                padding: 0.5em;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+                .bell {
+                    width: 3.75vw;
+                    border-radius: 6.25em;
+                    padding: 0.375em 0em;
+                    border: 1px solid #DEDEDE;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .message {
+                    @extend .bell;
+                }
+
+
+                .gallery{
+                    width: 12.639vw;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+
+                    span{
+                        font-size: 1em;
+                        font-weight: 400;
+                        color:  #0D163A;
+                        
+                    }
+                    
+                    div{
+                        width: 3.125vw;
+                        height: 3.125vh;
+                        background-color:  #00000033;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%; 
+                        padding: 0.625em 0em;
+                    }
+                    
+                }
+
             }
         }
-    }
+       
+        .overview-card{
+            .card-wrapper{
+                @include card-wrapper(47.57vw, 38.87vh)
+            }
+        }
+
+        .saving-card{
+            .card-wrapper{
+                @include card-wrapper(21.87vw, 38.87vh)
+            }
+        }
+
+        .analytics-card{
+            .card-wrapper{
+                @include card-wrapper(47.57vw, 38.87vh)
+            }
+        }
+
+        .transaction-card{
+            .card-wrapper{
+                @include card-wrapper(21.87vw, 38.87vh)
+            }
+        }
+
+
+      
+  
 }
