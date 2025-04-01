@@ -5,7 +5,8 @@ import {
   createRoutesFromElements,
 } from "react-router";
 import { Suspense, lazy } from "react";
-import AppSidebar from "./layouts/sidebar/AppSidebar";
+import MainLayout from "./layouts/MainLayout";
+
 
 const HomePage = lazy(() => import("../src/pages/DashboardPage"));
 
@@ -22,7 +23,7 @@ const renderRoutes = (routes) =>
     <Route
       key={index}
       path={path}
-      element={<AppSidebar>{element}</AppSidebar>}
+      element={<MainLayout>{element}</MainLayout>}
     />
   ));
 
