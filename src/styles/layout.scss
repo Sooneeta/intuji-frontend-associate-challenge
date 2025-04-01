@@ -7,6 +7,8 @@ $font-stack: 'Plus Jakarta Sans';
     font-family: $font-stack;
     height: 100vh;
     width: 100vw;
+    background-color: #F7F7FB;
+    box-sizing: border-box;
 }
 
 .sidebar-section {
@@ -16,6 +18,8 @@ $font-stack: 'Plus Jakarta Sans';
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    background-color: #FFFFFF;
+
 }
 
 .sidebar {

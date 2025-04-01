@@ -1,0 +1,30 @@
+@mixin topbar($width) {
+    height: 64px;
+    border-radius: 100px;
+    width: $width;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.dashboard-wrapper {
+
+
+
+    .topbar-wrapper {
+        display: flex;
+
+        .search-topbar {
+            .topbar {
+                @include topbar(722px);
+                padding: 13px 20px;
+            }
+        }
+
+        .user-topbar {
+            .topbar {
+                @include topbar(350px);
+                padding: 8px;
+            }
+        }
+    }
+}
