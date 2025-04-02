@@ -1,3 +1,8 @@
+.layout{
+    display: flex;
+    flex-direction: column;  
+}
+
 
 @mixin card-wrapper($width, $height){
     padding: 1em;
@@ -15,3 +20,79 @@
     }
 }
 
+@mixin overview-card-wrapper{
+    
+   
+
+    .card-wrapper{
+      @include card-wrapper(20.38vw, 12.25vh);
+      @extend .layout;
+      border-radius: 0.875em;
+      border: 1px solid #DEDEDEB2;
+      
+      justify-content: space-between;
+      align-items: center;
+
+      .text-content{
+         display: flex;
+         align-items: center;
+         gap: 0.625em;
+         height: 48px;
+         
+
+         .icon-wrapper{
+            width: 2em;
+            height: 2em;
+            padding: 0.5em;
+            border: 1px solid #EEEEEE;
+            border-radius: 50%;
+
+
+            img{
+               width: 2em;
+               height: 2em; 
+            }
+         }
+
+         .title{
+            @extend .layout;
+            gap: 0.56em;
+
+            span{
+                font-weight: 600;
+                font-size:  1.125em;
+                line-height: 1.5em;
+            }
+
+            .description{
+                display: flex;
+                gap: 4px;
+
+                img{
+                    width: 0.875em;
+                    height: 0.875em;
+
+                }
+
+                span{
+                    font-weight: 400;
+                    font-size: 0.75em;
+                }
+            }
+         }
+      }
+
+      .value-content{
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+
+           span{
+              font-size: 1.75em;
+              font-weight: 600;
+              letter-spacing: -2px;
+           }
+      }
+     
+    }
+}

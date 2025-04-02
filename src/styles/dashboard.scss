@@ -1,5 +1,6 @@
 @import "./card.scss";
 
+
 @mixin topbar($width) {
     height: 6.25vh;
     border-radius: 6.25em;
@@ -90,16 +91,80 @@
             }
         }
        
-        .overview-card{
+        .overview-card-wrapper{
             .card-wrapper{
-                @include card-wrapper(47.57vw, 38.87vh)
+                @include card-wrapper(47.57vw, 38.87vh);
+                .overview-subcard-container{
+                    width: 47.57vw;
+                    height: 16.16vh;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    column-gap: 1em;
+                    row-gap: 1em;
+                    place-items: center;
+
+                
+                .overview-subcard{
+                       .overview-card-wrapper {
+                         @include overview-card-wrapper;
+                       }
+                    
+                        
+                    
+                }
+                }
+                
+              
+              
+                
+     
             }
         }
 
         .saving-card{
             .card-wrapper{
                 @include card-wrapper(21.87vw, 38.87vh)
+
             }
+
+            .saving-plan-items {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+              }
+            
+              .saving-item {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+              }
+            
+              .saving-header {
+                display: flex;
+                justify-content: space-between;
+                font-size: 1rem;
+                font-weight: 600;
+              }
+            
+              .progress-bar-container {
+                width: 100%;
+                height: 6px;
+                background: #dedede;
+                border-radius: 3px;
+              }
+            
+              .progress-bar {
+                height: 6px;
+                border-radius: 3px;
+                transition: width 0.3s ease-in-out;
+              }
+            
+              .amounts {
+                display: flex;
+                justify-content: space-between;
+                font-size: 0.9rem;
+                font-weight: 500;
+              }
         }
 
         .analytics-card{
