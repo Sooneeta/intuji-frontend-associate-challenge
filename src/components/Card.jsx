@@ -1,5 +1,7 @@
 import ArrowRightIcon from "../assets/icons/arrow-right.svg";
+import ArrowRightWhiteIcon from "../assets/icons/arrow-right-white.svg";
 import "../styles/card.scss";
+import { useState } from "react";
 
 const Card = ({ title, children }) => {
   return (
@@ -11,11 +13,16 @@ const Card = ({ title, children }) => {
 };
 
 const OverviewCard = ({ cardData }) => {
+  const [isHovered, setIsHovered] = useState(false);
   return (
-    <div className="overview-card-wrapper">
+    <div
+      className="overview-card-wrapper"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <Card>
         <div className="text-content">
-          <figure className="icon-wrapper">
+          <figure className="icon-wrapper" style={{ margin: "0" }}>
             <img src={cardData?.icon} width={32} height={32} />
           </figure>
           <div className="title">
@@ -37,7 +44,7 @@ const OverviewCard = ({ cardData }) => {
 
         <div className="value-content">
           <span className="amount">{cardData?.amount}</span>
-          <img src={ArrowRightIcon} />
+          <img src={isHovered ? ArrowRightWhiteIcon : ArrowRightIcon} />
         </div>
       </Card>
     </div>

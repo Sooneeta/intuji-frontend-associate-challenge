@@ -24,21 +24,26 @@
    
     .card-wrapper{
       @include card-wrapper(20.38vw, 125.5px);
-      
+      padding: 1.25em;
       border-radius: 0.875em;
       border: 1px solid #DEDEDEB2;
-      
-      
-      
 
+      &:hover{
+        background-color: #4745A4; 
+
+        .text-content .title span, .value-content span {
+            color: white;
+          }
+      }
+    
       .text-content{
          display: flex;
+         gap: 9px;
          align-items: center;
          height: 48px;
-       
-
-         .icon-wrapper{
-            padding: 0.5em;
+        
+            .icon-wrapper{
+            padding: 0.4em 0.5em;
             border: 1px solid #EEEEEE;
             border-radius: 50%;
          }
@@ -64,6 +69,8 @@
                 span{
                     font-weight: 400;
                     font-size: 0.75em;
+                    color:  #0D163A;
+                    opacity: 60%;
                 }
             }
          }
@@ -82,4 +89,5 @@
       }
      
     }
+    
 }
