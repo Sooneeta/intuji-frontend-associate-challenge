@@ -49,17 +49,25 @@
     border-radius: 0.5em;
     height: 4em;  
     padding-left: 2.8em;
-    letter-spacing: 3%;
-    color: #0D163A;
+    
+    
 
     span {
         font-weight: 400;
+        letter-spacing: 3%;
+        color: #0D163A;
+        font-size: 1em;
+
     }
 
     &.active-link {
-        font-weight: 600;
         opacity: 100%;
         text-decoration: none;
+        span{
+            font-weight: 600;
+            
+        }
+       
        
 
         img {

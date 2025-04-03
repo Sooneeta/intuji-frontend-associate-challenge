@@ -8,7 +8,7 @@ export const AnalyticsCard = () => {
       <div
         style={{
           position: "absolute",
-          right: 22,
+          right: 16,
           display: "flex",
           gap: "2em",
         }}
@@ -32,7 +32,7 @@ export const AnalyticsCard = () => {
             <span key={index}>{label}</span>
           ))}
         </div>
-        <div className="chart-wrapper">
+        <div className="chart-yaxis-wrapper">
           <img src={Chart} alt="Analytics Chart" />
 
           <div className="y-axis-wrapper">

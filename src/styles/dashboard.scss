@@ -22,7 +22,7 @@
         .search-topbar {
             .topbar {
                 @include topbar(50.139vw);
-                padding: 1.25em ;
+                padding: 1.33em ;
               
                 display: flex;
                 align-items: center;
@@ -44,12 +44,11 @@
                 padding: 0.5em;
                 display: flex;
                 align-items: center;
-                gap: 0.625em;
-                
+                gap: 0.625em;  
                 .bell {
                     border-radius: 6.25em;
                     width: 2.9vw;
-                    padding: 0.75em;
+                    padding: 0.625em;
                     border: 1px solid #DEDEDE;
                     display: flex;
                     align-items: center;
@@ -215,7 +214,7 @@
         .analytics-card{
             .card-wrapper{
                 @include card-wrapper(47.57vw, 370px);
-                padding: 1.25em;
+                padding: 1em;
                 display: flex;
                 flex-direction: column;
                 gap: 1.5em;
@@ -275,10 +274,10 @@
                 }
 
                 .chart-wrapper{
-                    width: 47.01vw;
+                    
                     display: flex;
                     align-items: center;
-                    gap: 1.125em;
+                    gap: 2.2em;
 
                     .x-axis-wrapper{
                         display: flex;
@@ -294,7 +293,8 @@
                         }
                     }
 
-                    .chart-wrapper{
+                    .chart-yaxis-wrapper{
+                        width: 43.9vw;
                         display: flex;
                         flex-direction: column;
                         gap: 1em;
