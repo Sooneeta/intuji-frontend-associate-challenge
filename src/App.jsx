@@ -7,7 +7,6 @@ import {
 import { Suspense, lazy } from "react";
 import MainLayout from "./layouts/MainLayout";
 
-
 const HomePage = lazy(() => import("../src/pages/DashboardPage"));
 
 const routes = [
