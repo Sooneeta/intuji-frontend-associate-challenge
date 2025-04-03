@@ -16,7 +16,7 @@ const OverviewCard = ({ cardData }) => {
       <Card>
         <div className="text-content">
           <figure className="icon-wrapper">
-            <img src={cardData?.icon} />
+            <img src={cardData?.icon} width={32} height={32} />
           </figure>
           <div className="title">
             <span>{cardData?.title}</span>
@@ -28,11 +28,13 @@ const OverviewCard = ({ cardData }) => {
         </div>
         <hr
           style={{
-            opacity: "20%",
-            width: "20.38vw",
             border: "1px solid #0D163A",
+            opacity: "20%",
+            width: "20.28vw",
+            margin: "1.5em auto",
           }}
         />
+
         <div className="value-content">
           <span className="amount">{cardData?.amount}</span>
           <img src={ArrowRightIcon} />

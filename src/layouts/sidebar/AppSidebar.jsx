@@ -64,14 +64,16 @@ const AppSidebar = () => {
       <section className="sidebar">
         <div className="feature">
           <SidebarSection items={featureItems} />
-
-          <hr
-            style={{
-              border: " 1px solid #0D163A",
-              width: "219px",
-              opacity: "30%",
-            }}
-          />
+          <div>
+            <hr
+              style={{
+                width: "14.25vw",
+                border: "1px solid #0D163A",
+                opacity: "30%",
+                margin: "2em auto",
+              }}
+            />
+          </div>
 
           <SidebarSection items={userItems1} />
         </div>

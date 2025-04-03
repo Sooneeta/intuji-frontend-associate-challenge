@@ -6,7 +6,7 @@ const MainLayout = ({ children }) => {
     <div className="layout-wrapper">
       <AppSidebar />
 
-      <section className="main-section">{children}</section>
+      <section>{children}</section>
     </div>
   );
 };
