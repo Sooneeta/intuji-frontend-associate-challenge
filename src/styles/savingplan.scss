@@ -1,0 +1,75 @@
+@import "./layout.scss";
+
+.saving-plan-items {
+    @include flex-vertical-layout;
+    gap: 1em;
+    .saving-item{
+        @include flex-vertical-layout;
+       padding: 0.5em;
+       gap: 0.875em;
+
+       .header-section{
+        @include flex-horizontal-layout;
+           justify-content: space-between;
+
+           .header{
+               font-size: 1rem;
+               color: #0D163A;
+
+               font-weight: 500;
+           }
+          
+           .target-date{
+               color: #0D163A;
+               font-weight: 400;
+               font-size: 0.75rem;
+               opacity: 60%;
+           }
+
+       }
+
+       .amount-section{
+          @include flex-horizontal-layout;
+           justify-content: space-between;
+
+           div{
+            @include flex-horizontal-layout;
+               gap: 3px;
+               .target-amount{
+                   font-size: 1.25rem;
+                   font-weight: 600;
+                   letter-spacing: -1px;
+               }
+
+               .saved-amount{
+                   color: #0D163A;
+                   opacity: 50%;
+                   font-size: 0.75rem;
+                   font-weight: 600;
+                   letter-spacing: -1px;
+                   padding-top: 0.8em;
+
+               }
+
+           }
+           .progress-rate{
+               font-weight: 600;
+               font-size: 1.125rem;
+               letter-spacing: -1px;
+           }
+       }
+
+       .progress-bar-section{
+           width: 100%;
+           height: 8px;
+           background-color: #dedede;
+           border-radius: 6.25em;
+
+           .progress-bar{
+               border-radius: 6.25em;
+           }
+       }
+
+    }
+   
+ }

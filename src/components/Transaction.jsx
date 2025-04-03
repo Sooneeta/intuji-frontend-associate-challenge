@@ -1,7 +1,8 @@
 import { Card } from "./Card";
 import GalleryIcon from "../assets/icons/gallery.svg";
+import "../styles/transaction.scss";
 
-export const TransactionCard = ({ items }) => {
+export const Transaction = ({ items }) => {
   return (
     <Card title="Recent Transaction">
       <span

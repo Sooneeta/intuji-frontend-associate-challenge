@@ -10,10 +10,10 @@ import { Card } from "../components/Card";
 import { OverviewCard } from "../components/Card";
 import { overview } from "../data/overview";
 import { savingPlan } from "../data/savingplan";
-import { SavingPlanCard } from "../components/SavingPlanCard";
+import { SavingPlan } from "../components/SavingPlan";
 import { recentTransaction } from "../data/recenttransaction";
-import { TransactionCard } from "../components/TransactionCard";
-import { AnalyticsCard } from "../components/AnalyticsCard";
+import { Transaction } from "../components/Transaction";
+import { Analytics } from "../components/Analytics";
 
 const DashboardPage = () => {
   return (
@@ -54,13 +54,13 @@ const DashboardPage = () => {
       </div>
 
       <div className="saving-card">
-        <SavingPlanCard items={savingPlan} />
+        <SavingPlan items={savingPlan} />
       </div>
       <div className="analytics-card">
-        <AnalyticsCard />
+        <Analytics />
       </div>
       <div className="transaction-card">
-        <TransactionCard items={recentTransaction} />
+        <Transaction items={recentTransaction} />
       </div>
     </div>
   );

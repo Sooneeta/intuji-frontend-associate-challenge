@@ -1,3 +1,12 @@
+@mixin flex-horizontal-layout{
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-vertical-layout{
+    display: flex;
+    flex-direction: column;
+}
 
 .layout-wrapper {
     display: flex;
@@ -7,14 +16,12 @@
 }
 
 
-
 .sidebar-wrapper{
     width: 19.44%; 
     height: 93.75%;
     background-color: #FFFFFF;
     padding: 2em 0em;
-    display: flex;
-    flex-direction: column;
+    @include flex-vertical-layout;
     gap: 2em;
    
     .figure {
@@ -22,35 +29,28 @@
         width: 12.36vw;
         height: 3.25em;
         margin-left: 2.25em;
-        
-        display: flex;
-        align-items: center;
+        @include flex-horizontal-layout;
         justify-content: center;
     }
 
    .sidebar{
       height: 100%;
-      display: flex;
-      flex-direction: column;
+      @include flex-vertical-layout;
       justify-content: space-between;
    }
 }
 
 
 
-
-
 .navlink {
-    display: flex;
-    align-items: center;
+    @include flex-horizontal-layout;
     gap: 1em;
     opacity: 70%;
     width: 16.27vw;
     border-radius: 0.5em;
     height: 4em;  
     padding-left: 2.8em;
-    
-    
+      
 
     span {
         font-weight: 400;
@@ -67,12 +67,14 @@
             font-weight: 600;
             
         }
-       
-       
-
         img {
             color: #F9BA33;
         }
+    }
+
+    &:hover{
+        @extend .active-link;
+        cursor: pointer;
     }
 
 

@@ -1,11 +1,13 @@
+@import "./layout.scss";
+
+
 @mixin card-wrapper($width, $height){
     padding: 1em;
     border-radius: 0.875em;
     background-color: white;
     width: $width;
     height: $height;
-    display: flex;
-    flex-direction: column;
+    @include flex-vertical-layout;
     position: relative;
    
 
@@ -18,10 +20,7 @@
     }
 }
 
-@mixin overview-card-wrapper{
-    
-   
-   
+@mixin overview-card-wrapper{  
     .card-wrapper{
       @include card-wrapper(20.38vw, 125.5px);
       padding: 1.25em;
@@ -30,16 +29,14 @@
 
       &:hover{
         background-color: #4745A4; 
-
         .text-content .title span, .value-content span {
             color: white;
           }
       }
     
       .text-content{
-         display: flex;
+        @include flex-horizontal-layout;    
          gap: 9px;
-         align-items: center;
          height: 48px;
         
             .icon-wrapper{
@@ -56,8 +53,7 @@
             }
 
             .description{
-                display: flex;
-                align-items: center;
+                @include flex-horizontal-layout;
                 gap: 4px;
 
                 img{
@@ -77,9 +73,8 @@
       }
 
       .value-content{
-           display: flex;
+        @include flex-horizontal-layout;
            justify-content: space-between;
-           align-items: center;
 
            span{
               font-size: 1.75em;

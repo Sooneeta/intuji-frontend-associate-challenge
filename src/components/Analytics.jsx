@@ -2,7 +2,7 @@ import { Card } from "./Card";
 import VectorIcon from "../assets/icons/Vector.svg";
 import Chart from "../assets/icons/analytics-chart.svg";
 
-export const AnalyticsCard = () => {
+export const Analytics = () => {
   return (
     <Card title="Analytics">
       <div

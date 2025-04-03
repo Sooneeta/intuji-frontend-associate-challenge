@@ -1,6 +1,7 @@
 import { Card } from "./Card";
+import "../styles/savingplan.scss";
 
-export const SavingPlanCard = ({ items }) => {
+export const SavingPlan = ({ items }) => {
   return (
     <Card title="Saving Plan">
       <span

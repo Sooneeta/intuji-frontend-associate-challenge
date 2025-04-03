@@ -1,4 +1,5 @@
 @import "./card.scss";
+@import "./layout.scss";
 
 
 @mixin topbar($width) {
@@ -23,9 +24,7 @@
             .topbar {
                 @include topbar(50.139vw);
                 padding: 1.33em ;
-              
-                display: flex;
-                align-items: center;
+                @include flex-horizontal-layout;
                 gap: 0.625em;
 
                 span {
@@ -42,16 +41,14 @@
             .topbar {
                 @include topbar(23.35vw);
                 padding: 0.5em;
-                display: flex;
-                align-items: center;
+                @include flex-horizontal-layout;
                 gap: 0.625em;  
                 .bell {
                     border-radius: 6.25em;
                     width: 2.9vw;
                     padding: 0.625em;
                     border: 1px solid #DEDEDE;
-                    display: flex;
-                    align-items: center;
+                    @include flex-horizontal-layout;
                     justify-content: center;
 
                 }
@@ -62,16 +59,13 @@
 
 
                 .gallery{
-                 
-                    display: flex;
-                    align-items: center;
+                    @include flex-horizontal-layout;
                     gap: 10px;
 
                     span{
                         font-size: 1em;
                         font-weight: 400;
-                        color:  #0D163A;
-                      
+                        color:  #0D163A; 
                         letter-spacing: 0px;
                         
                     }
@@ -79,8 +73,7 @@
                     div{
                        
                         background-color:  #00000033;
-                        display: flex;
-                        align-items: center;
+                        @include flex-horizontal-layout;
                         justify-content: center;
                         border-radius: 50%; 
                         padding: 0.75em;
@@ -107,16 +100,9 @@
                 .overview-subcard{
                        .overview-card-wrapper {
                          @include overview-card-wrapper;
-                       }
-                    
-                        
-                    
+                       } 
                 }
                 }
-                
-              
-              
-                
      
             }
         }
@@ -126,88 +112,7 @@
                 @include card-wrapper(21.87vw, 398px)
 
             }
-
-            .saving-plan-items {
-                 display: flex;
-                 flex-direction: column;
-                 gap: 1em;
-                 .saving-item{
-                    display: flex;
-                    flex-direction: column;
-                    padding: 0.5em;
-                    gap: 0.875em;
-
-                    .header-section{
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-
-                        .header{
-                            font-size: 1rem;
-                            color: #0D163A;
-
-                            font-weight: 500;
-                        }
-                       
-                        .target-date{
-                            color: #0D163A;
-                            font-weight: 400;
-                            font-size: 0.75rem;
-                            opacity: 60%;
-                        }
-
-                    }
-
-                    .amount-section{
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-
-                        div{
-                            display: flex;
-                            align-items: center;
-                            gap: 3px;
-                            .target-amount{
-                                font-size: 1.25rem;
-                                font-weight: 600;
-                                letter-spacing: -1px;
-                            }
-
-                            .saved-amount{
-                                color: #0D163A;
-                                opacity: 50%;
-                                font-size: 0.75rem;
-                                font-weight: 600;
-                                letter-spacing: -1px;
-                                padding-top: 0.8em;
-
-                            }
-
-                        }
-                        .progress-rate{
-                            font-weight: 600;
-                            font-size: 1.125rem;
-                            letter-spacing: -1px;
-                        }
-                    }
-
-                    .progress-bar-section{
-                        width: 100%;
-                        height: 8px;
-                        background-color: #dedede;
-                        border-radius: 6.25em;
-
-                        .progress-bar{
-                            border-radius: 6.25em;
-                        }
-                    }
-
-                 }
-                
-              }
-            
-             
-            
+ 
             
         }
 
@@ -215,55 +120,41 @@
             .card-wrapper{
                 @include card-wrapper(47.57vw, 370px);
                 padding: 1em;
-                display: flex;
-                flex-direction: column;
+                @include flex-vertical-layout;
                 gap: 1.5em;
+
+                @mixin label-section($bg-color) {
+                    @include flex-horizontal-layout;
+                    gap: 0.75em;
+                
+                    div {
+                        width: 0.75em;
+                        height: 0.75em;
+                        border-radius: 50%;
+                        background: $bg-color;
+                    }
+                
+                    span {
+                        color: #0D163A;
+                        font-weight: 500;
+                        font-size: 0.875em;
+                    }
+                }
 
                 div{
                     .label-1-section{
-                        display: flex;
-                        align-items: center;
-                        gap: 0.75em;
-
-                        div{
-                            width: 0.75em;
-                            height: 0.75em;
-                            background: #4745A4;
-                            border-radius: 50%;
-                        }
-                        span{
-                            color: #0D163A;
-                            font-weight: 500;
-                            font-size: 0.875em;
-
-                        }
+                      @include label-section(#4745A4)
                     }
 
                     .label-2-section{
-                        display: flex;
-                        align-items: center;
-                        gap: 0.75em;
-
-                        div{
-                            width: 0.75em;
-                            height: 0.75em;
-                            background: #F9BA33;
-                            border-radius: 50%;
-                        }
-                        span{
-                            color: #0D163A;
-                            font-weight: 500;
-                            font-size: 0.875em;
-
-                        }
+                       @include label-section(#F9BA33) 
                     }
                     .dropdown-section{
                         padding: 0.5em;
                         border: 1px solid #DEDEDE;
                         border-radius: 0.5em;
-                        display: flex;
+                        @include flex-horizontal-layout;
                         gap: 0.5em;
-                        align-items: center;
                         span{
                             font-size: 0.875em;
                             font-weight: 400;
@@ -274,15 +165,12 @@
                 }
 
                 .chart-wrapper{
-                    
-                    display: flex;
-                    align-items: center;
+                    @include flex-horizontal-layout;
                     gap: 2.2em;
 
                     .x-axis-wrapper{
-                        display: flex;
                         height: 100%;
-                        flex-direction: column;
+                        @include flex-vertical-layout;
                         justify-content: space-between;
 
                         span{
@@ -295,8 +183,7 @@
 
                     .chart-yaxis-wrapper{
                         width: 43.9vw;
-                        display: flex;
-                        flex-direction: column;
+                        @include flex-vertical-layout;
                         gap: 1em;
 
                         .y-axis-wrapper{
@@ -320,73 +207,6 @@
         .transaction-card{
             .card-wrapper{
                 @include card-wrapper(21.87vw, 370px);
-
-                .transaction-items{
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1.56em;
-                    width: 100%;
-
-                    .transaction-item{
-                        display: flex;
-                        gap: 0.5em;
-                        align-items: center;
-                        padding: 0.5em 0em;
-                        width: 100%;
-
-                        .img-section{
-                            background-color: #00000033;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            border-radius: 50%;
-                            padding: 0.75em;
-                            
-                        }
-
-                        .text-section{
-                            width: 100%;
-                            .remarks-amount-container{
-                                display: flex;
-                                align-items: center;
-                                justify-content: space-between;
-
-                                .remarks{
-                                    font-size: 1.125rem;
-                                    font-weight: 600;
-                                    color: #0D163A;
-                                }
-                                .amount{
-                                    font-size: 1.125rem;
-                                    font-weight: 600;
-                                    color: #0D163A;
-                                }
-                            }
-
-                            .date-status-container{
-                                display: flex;
-                                align-items: center;
-                                justify-content: space-between;
-
-                                .transaction-date{
-                                    font-size: 0.75rem;
-                                    color: #0D163A;
-                                    opacity: 50%;
-                                    font-weight: 600;
-
-                                }
-
-                                .transaction-status{
-                                    font-size: 0.75em;  
-                                    font-weight: 600;
-                                    letter-spacing: -1px;
-                                    color: #3BBB6E;
-
-                                }
-                            }
-                        }
-                    }
-                }
             }
 
         }
