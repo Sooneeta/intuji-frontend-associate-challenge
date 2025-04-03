@@ -10,6 +10,29 @@
 }
 
 
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
 
 .dashboard-wrapper {
     display: grid;
@@ -26,6 +49,7 @@
                 padding: 1.33em ;
                 @include flex-horizontal-layout;
                 gap: 0.625em;
+                animation: slideInFromTop 1.5s ease-in-out;
 
                 span {
                    color:#667085;
@@ -43,6 +67,7 @@
                 padding: 0.5em;
                 @include flex-horizontal-layout;
                 gap: 0.625em;  
+                animation: slideInFromTop 1.5s ease-in-out;
                 .bell {
                     border-radius: 6.25em;
                     width: 2.9vw;
@@ -88,6 +113,7 @@
            
             .card-wrapper{
                 @include card-wrapper(47.57vw, 398px);
+                animation: slideInFromBottom 1.5s ease-in-out;
                 .overview-subcard-container{
                     padding-top: 1.25em;
                     display: grid;
@@ -109,7 +135,9 @@
 
         .saving-card{
             .card-wrapper{
-                @include card-wrapper(21.87vw, 398px)
+
+                @include card-wrapper(21.87vw, 398px);
+                animation: slideInFromBottom 1.5s ease-in-out;
 
             }
  
@@ -122,6 +150,7 @@
                 padding: 1em;
                 @include flex-vertical-layout;
                 gap: 1.5em;
+                animation: slideInFromBottom 2s ease-in-out;
 
                 @mixin label-section($bg-color) {
                     @include flex-horizontal-layout;
@@ -207,6 +236,7 @@
         .transaction-card{
             .card-wrapper{
                 @include card-wrapper(21.87vw, 370px);
+                animation: slideInFromBottom 2.5s ease-in-out;
             }
 
         }

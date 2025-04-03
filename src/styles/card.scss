@@ -1,6 +1,9 @@
 @import "./layout.scss";
 
 
+
+
+
 @mixin card-wrapper($width, $height){
     padding: 1em;
     border-radius: 0.875em;
@@ -9,6 +12,7 @@
     height: $height;
     @include flex-vertical-layout;
     position: relative;
+   
    
 
     span{
