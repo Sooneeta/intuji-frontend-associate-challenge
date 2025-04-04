@@ -23,7 +23,7 @@ export const Analytics = () => {
         </section>
         <section className="dropdown-section">
           <span>Weekly</span>
-          <img src={VectorIcon} />
+          <img src={VectorIcon} width={95} height={95} />
         </section>
       </div>
       <div className="chart-wrapper">

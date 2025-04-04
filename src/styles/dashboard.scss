@@ -15,6 +15,7 @@
         transform: translateY(-100%);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -26,6 +27,7 @@
         transform: translateY(100%);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -41,208 +43,211 @@
     row-gap: 2em;
     padding: 2em;
 
-   
 
-        .search-topbar {
-            .topbar {
-                @include topbar(50.139vw);
-                padding: 1.33em ;
+
+    .search-topbar {
+        .topbar {
+            @include topbar(50.139vw);
+            padding: 1.33em;
+            @include flex-horizontal-layout;
+            gap: 0.625em;
+            animation: slideInFromTop 1.5s ease-in-out;
+
+            span {
+                color: #667085;
+                font-size: 1rem;
+                font-weight: 400;
+
+
+            }
+        }
+    }
+
+    .user-topbar {
+        .topbar {
+            @include topbar(23.35vw);
+            padding: 0.5em;
+            @include flex-horizontal-layout;
+            gap: 0.625em;
+            animation: slideInFromTop 1.5s ease-in-out;
+
+            .bell {
+                border-radius: 6.25em;
+                width: 2.9vw;
+                padding: 0.625em;
+                border: 1px solid #DEDEDE;
                 @include flex-horizontal-layout;
-                gap: 0.625em;
-                animation: slideInFromTop 1.5s ease-in-out;
+                justify-content: center;
+
+            }
+
+            .message {
+                @extend .bell;
+            }
+
+
+            .gallery {
+                @include flex-horizontal-layout;
+                gap: 10px;
 
                 span {
-                   color:#667085;
-                   font-size: 1rem;
-                   font-weight: 400;
-                  
+                    font-size: 1em;
+                    font-weight: 400;
+                    color: #0D163A;
+                    letter-spacing: 0px;
 
                 }
-            }
-        }
 
-        .user-topbar {
-            .topbar {
-                @include topbar(23.35vw);
-                padding: 0.5em;
-                @include flex-horizontal-layout;
-                gap: 0.625em;  
-                animation: slideInFromTop 1.5s ease-in-out;
-                .bell {
-                    border-radius: 6.25em;
-                    width: 2.9vw;
-                    padding: 0.625em;
-                    border: 1px solid #DEDEDE;
+                div {
+
+                    background-color: #00000033;
                     @include flex-horizontal-layout;
                     justify-content: center;
-
+                    border-radius: 50%;
+                    padding: 0.75em;
                 }
 
-                .message {
-                    @extend .bell;
+            }
+
+        }
+    }
+
+    .overview-card-wrapper {
+
+        .card-wrapper {
+            @include card-wrapper(47.57vw, 398px);
+            animation: slideInFromBottom 1.5s ease-in-out;
+
+            .overview-subcard-container {
+                padding-top: 1.25em;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 1.125em;
+                row-gap: 1.125em;
+                place-items: center;
+
+
+                .overview-subcard {
+                    .overview-card-wrapper {
+                        @include overview-card-wrapper;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .saving-card {
+        .card-wrapper {
+
+            @include card-wrapper(21.87vw, 398px);
+            animation: slideInFromBottom 1.5s ease-in-out;
+
+        }
+
+
+    }
+
+    .analytics-card {
+        .card-wrapper {
+            @include card-wrapper(47.57vw, 370px);
+            padding: 1em;
+            @include flex-vertical-layout;
+            gap: 1.5em;
+            animation: slideInFromBottom 2s ease-in-out;
+
+            @mixin label-section($bg-color) {
+                @include flex-horizontal-layout;
+                gap: 0.75em;
+
+                div {
+                    width: 0.75em;
+                    height: 0.75em;
+                    border-radius: 50%;
+                    background: $bg-color;
                 }
 
+                span {
+                    color: #0D163A;
+                    font-weight: 500;
+                    font-size: 0.875em;
+                }
+            }
 
-                .gallery{
+            div {
+                .label-1-section {
+                    @include label-section(#4745A4)
+                }
+
+                .label-2-section {
+                    @include label-section(#F9BA33)
+                }
+
+                .dropdown-section {
+                    padding: 0.5em;
+                    border: 1px solid #DEDEDE;
+                    border-radius: 0.5em;
                     @include flex-horizontal-layout;
-                    gap: 10px;
+                    gap: 0.5em;
 
-                    span{
-                        font-size: 1em;
-                        font-weight: 400;
-                        color:  #0D163A; 
-                        letter-spacing: 0px;
-                        
-                    }
-                    
-                    div{
-                       
-                        background-color:  #00000033;
-                        @include flex-horizontal-layout;
-                        justify-content: center;
-                        border-radius: 50%; 
-                        padding: 0.75em;
-                    }
-                    
-                }
-
-            }
-        }
-       
-        .overview-card-wrapper{
-           
-            .card-wrapper{
-                @include card-wrapper(47.57vw, 398px);
-                animation: slideInFromBottom 1.5s ease-in-out;
-                .overview-subcard-container{
-                    padding-top: 1.25em;
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    column-gap: 1.125em;
-                    row-gap: 1.125em;
-                    place-items: center;
-
-                
-                .overview-subcard{
-                       .overview-card-wrapper {
-                         @include overview-card-wrapper;
-                       } 
-                }
-                }
-     
-            }
-        }
-
-        .saving-card{
-            .card-wrapper{
-
-                @include card-wrapper(21.87vw, 398px);
-                animation: slideInFromBottom 1.5s ease-in-out;
-
-            }
- 
-            
-        }
-
-        .analytics-card{
-            .card-wrapper{
-                @include card-wrapper(47.57vw, 370px);
-                padding: 1em;
-                @include flex-vertical-layout;
-                gap: 1.5em;
-                animation: slideInFromBottom 2s ease-in-out;
-
-                @mixin label-section($bg-color) {
-                    @include flex-horizontal-layout;
-                    gap: 0.75em;
-                
-                    div {
-                        width: 0.75em;
-                        height: 0.75em;
-                        border-radius: 50%;
-                        background: $bg-color;
-                    }
-                
                     span {
-                        color: #0D163A;
-                        font-weight: 500;
                         font-size: 0.875em;
+                        font-weight: 400;
+                        color: #7C7C7C;
+
+                    }
+                }
+            }
+
+            .chart-wrapper {
+                @include flex-horizontal-layout;
+                gap: 2.2em;
+
+                .x-axis-wrapper {
+                    height: 100%;
+                    @include flex-vertical-layout;
+                    gap: 2.75em;
+
+                    span {
+                        font-size: 0.875em;
+                        font-weight: 400;
+                        color: #999999;
+
                     }
                 }
 
-                div{
-                    .label-1-section{
-                      @include label-section(#4745A4)
-                    }
+                .chart-yaxis-wrapper {
+                    width: 43.9vw;
+                    @include flex-vertical-layout;
 
-                    .label-2-section{
-                       @include label-section(#F9BA33) 
-                    }
-                    .dropdown-section{
-                        padding: 0.5em;
-                        border: 1px solid #DEDEDE;
-                        border-radius: 0.5em;
-                        @include flex-horizontal-layout;
-                        gap: 0.5em;
-                        span{
-                            font-size: 0.875em;
-                            font-weight: 400;
-                            color: #7C7C7C;
 
-                        }
-                    }
-                }
-
-                .chart-wrapper{
-                    @include flex-horizontal-layout;
-                    gap: 2.2em;
-
-                    .x-axis-wrapper{
-                        height: 100%;
-                        @include flex-vertical-layout;
+                    .y-axis-wrapper {
+                        display: flex;
+                        width: 100%;
                         justify-content: space-between;
 
-                        span{
+                        span {
                             font-size: 0.875em;
                             font-weight: 400;
-                            color:  #999999;
-
+                            color: #999999;
                         }
                     }
-
-                    .chart-yaxis-wrapper{
-                        width: 43.9vw;
-                        @include flex-vertical-layout;
-                        gap: 1em;
-
-                        .y-axis-wrapper{
-                            display: flex;
-                            width: 100%;
-                            justify-content: space-between;
-
-                            span{
-                                font-size: 0.875em;
-                            font-weight: 400;
-                            color:  #999999;
-                            }
-                        }
-                    }
-
                 }
-                
-            }
-        }
 
-        .transaction-card{
-            .card-wrapper{
-                @include card-wrapper(21.87vw, 370px);
-                animation: slideInFromBottom 2.5s ease-in-out;
             }
 
         }
+    }
+
+    .transaction-card {
+        .card-wrapper {
+            @include card-wrapper(21.87vw, 370px);
+            animation: slideInFromBottom 2.5s ease-in-out;
+        }
+
+    }
 
 
-      
-  
+
+
 }
-
